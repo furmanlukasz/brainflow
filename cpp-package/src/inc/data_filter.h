@@ -143,6 +143,19 @@ public:
      */
     static std::pair<double *, double *> get_avg_band_powers (const BrainFlowArray<double, 2> &data,
         std::vector<int> channels, int sampling_rate, bool apply_filters);
+    /**
+     * calculate avg and stddev of BandPowers across all channels
+     * @param data input 2d array
+     * @param bands input bands
+     * @param cols number of cols in 2d array - number of datapoints
+     * @param channels vector of rows - eeg channels which should be used
+     * @param sampling_rate sampling rate
+     * @param apply_filters set to true to apply filters before band power calculations
+     * @return pair of float arrays with the same size as bands argument
+     */
+    static std::pair<double *, double *> get_custom_band_powers (
+        const BrainFlowArray<double, 2> &data, std::vector<std::pair<double, double>> bands,
+        std::vector<int> channels, int sampling_rate, bool apply_filters);
 
     /// write file, in file data will be transposed
     static void write_file (

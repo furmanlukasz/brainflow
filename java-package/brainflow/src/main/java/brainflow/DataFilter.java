@@ -3,9 +3,12 @@ package brainflow;
 import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.apache.commons.lang3.SystemUtils;
+import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.MutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.math3.complex.Complex;
@@ -78,8 +81,8 @@ public class DataFilter
         int get_psd_welch (double[] data, int len, int nfft, int overlap, int sampling_rate, int window, double[] ampls,
                 double[] freqs);
 
-        int get_avg_band_powers (double[] data, int rows, int cols, int sampling_rate, int apply_filters, double[] avgs,
-                double[] stddevs);
+        int get_custom_band_powers (double[] data, int rows, int cols, double[] start_freqs, double[] stop_freqs,
+                int num_bands, int sampling_rate, int apply_filters, double[] avgs, double[] stddevs);
 
         int get_band_power (double[] ampls, double[] freqs, int len, double start_freq, double stop_freq,
                 double[] output);
@@ -509,8 +512,7 @@ public class DataFilter
     }
 
     /**
-     * calc average and stddev of band powers across all channels, bands are
-     * 1-4,4-8,8-13,13-30,30-50
+     * calc average and stddev of band powers across all channels
      * 
      * @param data          data to process
      * @param channels      rows of data arrays which should be used in calculation
@@ -521,9 +523,32 @@ public class DataFilter
     public static Pair<double[], double[]> get_avg_band_powers (double[][] data, int[] channels, int sampling_rate,
             boolean apply_filters) throws BrainFlowError
     {
-        if ((data == null) || (channels == null))
+        List<Pair<Double, Double>> bands = new ArrayList<Pair<Double, Double>> ();
+        bands.add (new ImmutablePair<Double, Double> (1.5, 4.0));
+        bands.add (new ImmutablePair<Double, Double> (4.0, 8.0));
+        bands.add (new ImmutablePair<Double, Double> (8.0, 13.0));
+        bands.add (new ImmutablePair<Double, Double> (13.0, 30.0));
+        bands.add (new ImmutablePair<Double, Double> (30.0, 45.0));
+        return get_custom_band_powers (data, bands, channels, sampling_rate, apply_filters);
+    }
+
+    /**
+     * calc average and stddev of band powers across all channels
+     * 
+     * @param data          data to process
+     * @param bands         bands to calculate
+     * @param channels      rows of data arrays which should be used in calculation
+     * @param sampling_rate sampling rate
+     * @param apply_filters apply bandpass and bandstop filters before calculation
+     * @return pair of avgs and stddevs for bandpowers
+     */
+    public static Pair<double[], double[]> get_custom_band_powers (double[][] data, List<Pair<Double, Double>> bands,
+            int[] channels, int sampling_rate, boolean apply_filters) throws BrainFlowError
+    {
+        if ((data == null) || (channels == null) || (bands == null))
         {
-            throw new BrainFlowError ("data or channels null", ExitCode.INVALID_ARGUMENTS_ERROR.get_code ());
+            throw new BrainFlowError ("data or channels or bands are null",
+                    ExitCode.INVALID_ARGUMENTS_ERROR.get_code ());
         }
         double[] data_1d = new double[channels.length * data[channels[0]].length];
         for (int i = 0; i < channels.length; i++)
@@ -533,11 +558,18 @@ public class DataFilter
                 data_1d[j + i * data[channels[i]].length] = data[channels[i]][j];
             }
         }
-        double[] avgs = new double[5];
-        double[] stddevs = new double[5];
+        double[] avgs = new double[bands.size ()];
+        double[] stddevs = new double[bands.size ()];
+        double[] start_freqs = new double[bands.size ()];
+        double[] stop_freqs = new double[bands.size ()];
+        for (int i = 0; i < bands.size (); i++)
+        {
+            start_freqs[i] = bands.get (i).getKey ();
+            stop_freqs[i] = bands.get (i).getValue ();
+        }
         int filters = (apply_filters) ? 1 : 0;
-        int ec = instance.get_avg_band_powers (data_1d, channels.length, data[channels[0]].length, sampling_rate,
-                filters, avgs, stddevs);
+        int ec = instance.get_custom_band_powers (data_1d, channels.length, data[channels[0]].length, start_freqs,
+                stop_freqs, bands.size (), sampling_rate, filters, avgs, stddevs);
         if (ec != ExitCode.STATUS_OK.get_code ())
         {
             throw new BrainFlowError ("Failed to get_avg_band_powers", ec);

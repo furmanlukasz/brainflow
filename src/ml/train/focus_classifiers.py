@@ -4,6 +4,7 @@ import os
 import time
 import pickle
 import copy
+import logging
 
 import numpy as np
 from sklearn import metrics
@@ -16,8 +17,8 @@ from brainflow.board_shim import BoardShim
 from brainflow.data_filter import DataFilter
 from brainflow.ml_model import BrainFlowMetrics, BrainFlowClassifiers, MLModel, BrainFlowModelParams
 
-from svm_classifier import train_brainflow_search_svm, train_brainflow_svm
-from store_model import write_model, write_knn_model
+from skl2onnx import convert_sklearn
+from skl2onnx.common.data_types import FloatTensorType
 
 
 def prepare_data():
@@ -42,8 +43,10 @@ def prepare_data():
                         cur_pos = sampling_rate * 3
                     while cur_pos + int(window_size * sampling_rate) < data.shape[1]:
                         data_in_window = data[:, cur_pos:cur_pos + int(window_size * sampling_rate)]
+                        data_in_window = np.ascontiguousarray(data_in_window)
                         bands = DataFilter.get_avg_band_powers(data_in_window, eeg_channels, sampling_rate, True)
                         feature_vector = np.concatenate((bands[0], bands[1]))
+                        feature_vector = feature_vector.astype(float)
                         dataset_x.append(feature_vector)
                         if data_type == 'relaxed':
                             dataset_y.append(0)
@@ -51,7 +54,7 @@ def prepare_data():
                             dataset_y.append(1)
                         cur_pos = cur_pos + int(window_size * overlaps[num] * sampling_rate)
             except Exception as e:
-                print(str(e))
+                logging.error(str(e), exc_info=True)
 
     print('Class 1: %d Class 0: %d' % (len([x for x in dataset_y if x == 1]), len([x for x in dataset_y if x == 0])))
 
@@ -81,101 +84,6 @@ def get_eeg_channels(board_id):
     return eeg_channels
 
 
-def train_lda(data):
-    model = LinearDiscriminantAnalysis()
-    print('#### Linear Discriminant Analysis ####')
-    scores = cross_val_score(model, data[0], data[1], cv=5, scoring='f1_macro', n_jobs=8)
-    print('f1 macro %s' % str(scores))
-    scores = cross_val_score(model, data[0], data[1], cv=5, scoring='precision_macro', n_jobs=8)
-    print('precision macro %s' % str(scores))
-    scores = cross_val_score(model, data[0], data[1], cv=5, scoring='recall_macro', n_jobs=8)
-    print('recall macro %s' % str(scores))
-    model.fit(data[0], data[1])
-    write_model(model.intercept_, model.coef_, 'lda')
-
-
-def train_regression(data):
-    model = LogisticRegression(class_weight='balanced', solver='liblinear',
-                               max_iter=4000, penalty='l2', random_state=1)
-    print('#### Logistic Regression ####')
-    scores = cross_val_score(model, data[0], data[1], cv=5, scoring='f1_macro', n_jobs=8)
-    print('f1 macro %s' % str(scores))
-    scores = cross_val_score(model, data[0], data[1], cv=5, scoring='precision_macro', n_jobs=8)
-    print('precision macro %s' % str(scores))
-    scores = cross_val_score(model, data[0], data[1], cv=5, scoring='recall_macro', n_jobs=8)
-    print('recall macro %s' % str(scores))
-    model.fit(data[0], data[1])
-    write_model(model.intercept_, model.coef_, 'regression')
-
-
-def train_knn(data):
-    model = KNeighborsClassifier(n_neighbors=5)
-    print('#### KNN ####')
-    data_x = copy.deepcopy(data[0])
-    for i, x in enumerate(data_x):
-        for j in range(5, 10):
-            data_x[i][j] = data_x[i][j] / 5  # idea to make stddev less important than avg, 5 random value
-    scores = cross_val_score(model, data_x, data[1], cv=5, scoring='f1_macro', n_jobs=8)
-    print('f1 macro %s' % str(scores))
-    scores = cross_val_score(model, data_x, data[1], cv=5, scoring='precision_macro', n_jobs=8)
-    print('precision macro %s' % str(scores))
-    scores = cross_val_score(model, data_x, data[1], cv=5, scoring='recall_macro', n_jobs=8)
-    print('recall macro %s' % str(scores))
-    write_knn_model(data)
-
-
-def test_brainflow_lr(data):
-    print('Test BrainFlow LR')
-    params = BrainFlowModelParams(BrainFlowMetrics.CONCENTRATION.value, BrainFlowClassifiers.REGRESSION.value)
-    model = MLModel(params)
-    start_time = time.time()
-    model.prepare()
-    predicted = [model.predict(x) > 0.5 for x in data[0]]
-    model.release()
-    stop_time = time.time()
-    print('Total time %f' % (stop_time - start_time))
-    print(metrics.classification_report(data[1], predicted))
-
-
-def test_brainflow_knn(data):
-    print('Test BrainFlow KNN')
-    params = BrainFlowModelParams(BrainFlowMetrics.CONCENTRATION.value, BrainFlowClassifiers.KNN.value)
-    model = MLModel(params)
-    start_time = time.time()
-    model.prepare()
-    predicted = [model.predict(x) >= 0.5 for x in data[0]]
-    model.release()
-    stop_time = time.time()
-    print('Total time %f' % (stop_time - start_time))
-    print(metrics.classification_report(data[1], predicted))
-
-
-def test_brainflow_lda(data):
-    print('Test BrainFlow LDA')
-    params = BrainFlowModelParams(BrainFlowMetrics.CONCENTRATION.value, BrainFlowClassifiers.LDA.value)
-    model = MLModel(params)
-    start_time = time.time()
-    model.prepare()
-    predicted = [model.predict(x) >= 0.5 for x in data[0]]
-    model.release()
-    stop_time = time.time()
-    print('Total time %f' % (stop_time - start_time))
-    print(metrics.classification_report(data[1], predicted))
-
-
-def test_brainflow_svm(data):
-    print('Test BrainFlow SVM')
-    params = BrainFlowModelParams(BrainFlowMetrics.CONCENTRATION.value, BrainFlowClassifiers.SVM.value)
-    model = MLModel(params)
-    start_time = time.time()
-    model.prepare()
-    predicted = [model.predict(x) >= 0.5 for x in data[0]]
-    model.release()
-    stop_time = time.time()
-    print('Total time %f' % (stop_time - start_time))
-    print(metrics.classification_report(data[1], predicted))
-
-
 def print_dataset_info(data):
     x, y = data
     relaxed_ids = [idx[0] for idx in enumerate(y) if idx[1] == 0]
@@ -202,11 +110,34 @@ def print_dataset_info(data):
     print(np.mean(focused_np, axis=0))
 
 
+def train_regression(data):
+    model = LogisticRegression(class_weight='balanced', solver='liblinear',
+                               max_iter=4000, penalty='l2', random_state=1)
+    print('#### Logistic Regression ####')
+    scores = cross_val_score(model, data[0], data[1], cv=5, scoring='f1_macro', n_jobs=8)
+    print('f1 macro %s' % str(scores))
+    scores = cross_val_score(model, data[0], data[1], cv=5, scoring='precision_macro', n_jobs=8)
+    print('precision macro %s' % str(scores))
+    scores = cross_val_score(model, data[0], data[1], cv=5, scoring='recall_macro', n_jobs=8)
+    print('recall macro %s' % str(scores))
+    model.fit(data[0], data[1])
+    
+    initial_type = [('double_input', FloatTensorType([None, 10]))]
+    onx = convert_sklearn(model, initial_types=initial_type, target_opset=7)
+    with open('logreg_focus.onnx', 'wb') as f:
+        f.write(onx.SerializeToString())
+
+    import onnxruntime as rt
+    sess = rt.InferenceSession('logreg_focus.onnx')
+    input_name = sess.get_inputs()[0].name
+    label_name = sess.get_outputs()[0].name
+    pred_onx = sess.run([label_name], {input_name: data[0]})
+    print(pred_onx)
+
 def main():
+    logging.basicConfig(level=logging.DEBUG)
     parser = argparse.ArgumentParser()
-    parser.add_argument('--test', action='store_true')
     parser.add_argument('--reuse-dataset', action='store_true')
-    parser.add_argument('--grid-search', action='store_true')
     args = parser.parse_args()
 
     if args.reuse_dataset:
@@ -218,18 +149,7 @@ def main():
     else:
         data = prepare_data()
     print_dataset_info(data)
-    if args.test:
-        # since we port models from python to c++ we need to test it as well
-        test_brainflow_knn(data)
-        test_brainflow_lr(data)
-        test_brainflow_svm(data)
-        test_brainflow_lda(data)
-    else:
-        train_regression(data)
-        # Don't use grid search method unless you have to as it takes a while to complete
-        train_brainflow_search_svm(data) if args.grid_search else train_brainflow_svm(data)
-        train_lda(data)
-        train_knn(data)
+    train_regression(data)
 
 
 if __name__ == '__main__':

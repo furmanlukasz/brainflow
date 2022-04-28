@@ -191,10 +191,13 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    pub fn get_avg_band_powers(
+    pub fn get_custom_band_powers(
         raw_data: *mut f64,
         rows: ::std::os::raw::c_int,
         cols: ::std::os::raw::c_int,
+        start_freqs: *mut f64,
+        stop_freqs: *mut f64,
+        num_bands: ::std::os::raw::c_int,
         sampling_rate: ::std::os::raw::c_int,
         apply_filters: ::std::os::raw::c_int,
         avg_band_powers: *mut f64,

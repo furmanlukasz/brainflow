@@ -248,17 +248,25 @@ end
     return res
 end
 
-@brainflow_rethrow function get_avg_band_powers(data, channels, sampling_rate::Integer, apply_filter::Bool)
+function get_avg_band_powers(data, channels, sampling_rate::Integer, apply_filter::Bool)
+    bands = [(1.5, 4.0), (4.0, 8.0), (8.0, 13.0), (13.0, 30.0), (30.0, 45.0)]
+    return get_custom_band_powers(data, bands, channels, sampling_rate, apply_filter)
+end
+
+@brainflow_rethrow function get_custom_band_powers(data, bands, channels, sampling_rate::Integer, apply_filter::Bool)
 
     shape = size(data)
     data_1d = reshape(transpose(data[channels,:]), (1, size(channels)[1] * shape[2]))
     data_1d = copy(data_1d)
 
-    temp_avgs = Vector{Float64}(undef, 5)
-    temp_stddevs = Vector{Float64}(undef, 5)
+    start_freqs = [first(p) for p in bands]
+    stop_freqs = [last(p) for p in bands]
 
-    ccall((:get_avg_band_powers, DATA_HANDLER_INTERFACE), Cint, (Ptr{Float64}, Cint, Cint, Cint, Cint, Ptr{Float64}, Ptr{Float64}),
-            data_1d, size(channels)[1], shape[2], Int32(sampling_rate), Int32(apply_filter), temp_avgs, temp_stddevs)
+    temp_avgs = Vector{Float64}(undef, length(start_freqs))
+    temp_stddevs = Vector{Float64}(undef, length(start_freqs))
+
+    ccall((:get_custom_band_powers, DATA_HANDLER_INTERFACE), Cint, (Ptr{Float64}, Cint, Cint, Ptr{Float64}, Ptr{Float64}, Cint, Cint, Cint, Ptr{Float64}, Ptr{Float64}),
+            data_1d, size(channels)[1], shape[2], start_freqs, stop_freqs, length(start_freqs), Int32(sampling_rate), Int32(apply_filter), temp_avgs, temp_stddevs)
     return temp_avgs, temp_stddevs
 end
 

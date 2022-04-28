@@ -8,17 +8,9 @@
 #include "brainflow_constants.h"
 #include "brainflow_model_params.h"
 #include "brainflow_version.h"
-#include "concentration_knn_classifier.h"
-#include "concentration_lda_classifier.h"
-#include "concentration_regression_classifier.h"
-#include "concentration_svm_classifier.h"
 #include "dyn_lib_classifier.h"
 #include "ml_module.h"
 #include "onnx_classifier.h"
-#include "relaxation_knn_classifier.h"
-#include "relaxation_lda_classifier.h"
-#include "relaxation_regression_classifier.h"
-#include "relaxation_svm_classifier.h"
 
 #include "json.hpp"
 
@@ -48,47 +40,7 @@ int prepare (const char *json_params)
         return (int)BrainFlowExitCodes::ANOTHER_CLASSIFIER_IS_PREPARED_ERROR;
     }
 
-    if ((key.metric == (int)BrainFlowMetrics::RELAXATION) &&
-        (key.classifier == (int)BrainFlowClassifiers::REGRESSION))
-    {
-        model = std::shared_ptr<BaseClassifier> (new RelaxationRegressionClassifier (key));
-    }
-    else if ((key.metric == (int)BrainFlowMetrics::CONCENTRATION) &&
-        (key.classifier == (int)BrainFlowClassifiers::REGRESSION))
-    {
-        model = std::shared_ptr<BaseClassifier> (new ConcentrationRegressionClassifier (key));
-    }
-    else if ((key.metric == (int)BrainFlowMetrics::RELAXATION) &&
-        (key.classifier == (int)BrainFlowClassifiers::SVM))
-    {
-        model = std::shared_ptr<BaseClassifier> (new RelaxationSVMClassifier (key));
-    }
-    else if ((key.metric == (int)BrainFlowMetrics::CONCENTRATION) &&
-        (key.classifier == (int)BrainFlowClassifiers::SVM))
-    {
-        model = std::shared_ptr<BaseClassifier> (new ConcentrationSVMClassifier (key));
-    }
-    else if ((key.metric == (int)BrainFlowMetrics::RELAXATION) &&
-        (key.classifier == (int)BrainFlowClassifiers::LDA))
-    {
-        model = std::shared_ptr<BaseClassifier> (new RelaxationLDAClassifier (key));
-    }
-    else if ((key.metric == (int)BrainFlowMetrics::CONCENTRATION) &&
-        (key.classifier == (int)BrainFlowClassifiers::LDA))
-    {
-        model = std::shared_ptr<BaseClassifier> (new ConcentrationLDAClassifier (key));
-    }
-    else if ((key.metric == (int)BrainFlowMetrics::CONCENTRATION) &&
-        (key.classifier == (int)BrainFlowClassifiers::KNN))
-    {
-        model = std::shared_ptr<BaseClassifier> (new ConcentrationKNNClassifier (key));
-    }
-    else if ((key.metric == (int)BrainFlowMetrics::RELAXATION) &&
-        (key.classifier == (int)BrainFlowClassifiers::KNN))
-    {
-        model = std::shared_ptr<BaseClassifier> (new RelaxationKNNClassifier (key));
-    }
-    else if ((key.metric == (int)BrainFlowMetrics::USER_DEFINED) &&
+    if ((key.metric == (int)BrainFlowMetrics::USER_DEFINED) &&
         (key.classifier == (int)BrainFlowClassifiers::DYN_LIB_CLASSIFIER))
     {
         model = std::shared_ptr<BaseClassifier> (new DynLibClassifier (key));
