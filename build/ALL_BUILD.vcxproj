@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{736A18E6-8305-3AAC-A76D-8B78B4E9BBC0}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/OneDrive/Pulpit/ANT/brainflow -BC:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/build --check-stamp-file C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.20\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeCCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeCXXCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeRCCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeSystem.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cmake\Config.cmake.in;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cmake\macros.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cpp-package\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\ant_neuro\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\ant_neuro_eego24\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\gtec\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\muse\muse_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\neuromd\brainbit_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\neuromd\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\openbci\ganglion_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\data_handler\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\ml\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\utils\bluetooth\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\tests\cpp\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\third_party\DSPFilters\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\third_party\wavelib\build.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/OneDrive/Pulpit/ANT/brainflow -BC:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/build --check-stamp-file C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.20\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeCCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeCXXCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeRCCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeSystem.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cmake\Config.cmake.in;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cmake\macros.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cpp-package\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\ant_neuro\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\ant_neuro_eego24\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\gtec\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\muse\muse_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\neuromd\brainbit_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\neuromd\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\openbci\ganglion_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\data_handler\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\ml\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\utils\bluetooth\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\tests\cpp\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\third_party\DSPFilters\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\third_party\wavelib\build.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/OneDrive/Pulpit/ANT/brainflow -BC:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/build --check-stamp-file C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.20\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeCCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeCXXCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeRCCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeSystem.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cmake\Config.cmake.in;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cmake\macros.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cpp-package\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\ant_neuro\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\ant_neuro_eego24\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\gtec\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\muse\muse_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\neuromd\brainbit_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\neuromd\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\openbci\ganglion_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\data_handler\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\ml\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\utils\bluetooth\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\tests\cpp\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\third_party\DSPFilters\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\third_party\wavelib\build.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lukas/OneDrive/Pulpit/ANT/brainflow -BC:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/build --check-stamp-file C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.20\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeCCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeCXXCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeRCCompiler.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\3.20.0\CMakeSystem.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cmake\Config.cmake.in;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cmake\macros.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\cpp-package\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\ant_neuro\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\ant_neuro_eego24\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\gtec\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\muse\muse_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\neuromd\brainbit_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\neuromd\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\board_controller\openbci\ganglion_bglib\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\data_handler\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\ml\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\src\utils\bluetooth\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\tests\cpp\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\third_party\DSPFilters\build.cmake;C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\third_party\wavelib\build.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\ZERO_CHECK.vcxproj">
+      <Project>{89C7AE5C-35FB-37A2-B32F-07D83EC8F2C3}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\BoardController.vcxproj">
+      <Project>{D3C50FF6-2D00-3981-B72F-AE0A20F1D7C7}</Project>
+      <Name>BoardController</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\BrainBitLib.vcxproj">
+      <Project>{923F087F-0B21-3AE4-98C7-562505DEAB60}</Project>
+      <Name>BrainBitLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\BrainFlowBluetooth.vcxproj">
+      <Project>{5329AF3D-9EC5-390D-9812-650C44630B98}</Project>
+      <Name>BrainFlowBluetooth</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\Brainflow.vcxproj">
+      <Project>{FF86A88C-CAD7-39B0-8D65-DDCE7DD818C3}</Project>
+      <Name>Brainflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\DSPFilters.vcxproj">
+      <Project>{DBC7D429-7CE7-37E1-8482-9463654AC822}</Project>
+      <Name>DSPFilters</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\DataHandler.vcxproj">
+      <Project>{A6C0FC9F-9E26-3184-A690-F097892067B1}</Project>
+      <Name>DataHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\GanglionLib.vcxproj">
+      <Project>{88493BBF-DEAF-3148-BDE1-EFD9CAF855C6}</Project>
+      <Name>GanglionLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\MLModule.vcxproj">
+      <Project>{E440B422-FE95-3F95-8704-9851BA5BF881}</Project>
+      <Name>MLModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\MuseLib.vcxproj">
+      <Project>{9C4A7632-4F10-36E9-8A85-2DC17E5FC75A}</Project>
+      <Name>MuseLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\lukas\OneDrive\Pulpit\ANT\brainflow\build\WaveLib.vcxproj">
+      <Project>{49715E7D-8269-32B5-9407-2A569BC22E6B}</Project>
+      <Name>WaveLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,132 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "brainflow",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "BoardController::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BoardController-Debug-ba5118277212af964791.json",
+					"name" : "BoardController",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "BrainBitLib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BrainBitLib-Debug-768b504f1108c141f75e.json",
+					"name" : "BrainBitLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Brainflow::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Brainflow-Debug-87639f2272340dfa10cb.json",
+					"name" : "Brainflow",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DSPFilters::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DSPFilters-Debug-ff2091160ea64039f312.json",
+					"name" : "DSPFilters",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DataHandler::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DataHandler-Debug-1588a742ad02ef305ec3.json",
+					"name" : "DataHandler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GanglionLib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GanglionLib-Debug-9966587cdd81aa80eec6.json",
+					"name" : "GanglionLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MLModule::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MLModule-Debug-7dc164384e6c8596ad40.json",
+					"name" : "MLModule",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MuseLib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MuseLib-Debug-d1b42d52ad86ec879c16.json",
+					"name" : "MuseLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "WaveLib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-WaveLib-Debug-d6febbfb46c0cb13aaa8.json",
+					"name" : "WaveLib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/out/build/x64-Debug",
+		"source" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

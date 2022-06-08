@@ -1,0 +1,760 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/compiled/BoardController.dll"
+		},
+		{
+			"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/compiled/BoardController.lib"
+		},
+		{
+			"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/compiled/BoardController.pdb"
+		}
+	],
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include",
+			"install",
+			"target_compile_definitions",
+			"add_definitions",
+			"configure_msvc_runtime",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"src/board_controller/build.cmake",
+			"CMakeLists.txt",
+			"cmake/macros.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 38,
+				"parent" : 0
+			},
+			{
+				"file" : 0,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 102,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 251,
+				"parent" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 139,
+				"parent" : 2
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 28,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 3,
+				"parent" : 6
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 107,
+				"parent" : 2
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MTd /Zi /Ob0 /Od /RTC1"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 5,
+					"define" : "BRAINFLOW_VERSION=0.0.1"
+				},
+				{
+					"define" : "BoardController_EXPORTS"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "NOMINMAX"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "_CRT_NONSTDC_NO_DEPRECATE"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "_CRT_SECURE_NO_WARNINGS"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party/json"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party/http"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party/unicorn/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party/oscpp/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/utils/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/utils/bluetooth/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/openbci/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/oymotion/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/gtec/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/neuromd/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/openbci/ganglion_bglib/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/neuromd/brainbit_bglib/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/muse/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/muse/muse_bglib/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party/neurosdk/inc/types"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/neurosity/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party/gForceSDKCXX/src/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/hackerbci/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/freeeeg32/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party/ant_neuro"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party/ant_neuro_eego24"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/ant_neuro/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/ant_neuro_eego24/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/enophone/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/third_party/SimpleBLE/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/src/board_controller/brainalive/inc"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					3
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56
+			]
+		}
+	],
+	"id" : "BoardController::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 4,
+				"path" : "lib"
+			},
+			{
+				"backtrace" : 4,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "C:/Users/lukas/OneDrive/Pulpit/ANT/brainflow/out/install/x64-Debug"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "BoardController",
+	"nameOnDisk" : "BoardController.dll",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/timestamp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/data_buffer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/os_serial.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/os_serial_ioctl.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/serial.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/libftdi_serial.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/socket_client_tcp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/socket_client_udp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/socket_server_tcp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/socket_server_udp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/multicast_client.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/multicast_server.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/utils/broadcast_client.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/galea_serial.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/openbci_serial_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/openbci_wifi_shield_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/ganglion_wifi.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/cyton_wifi.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/cyton_daisy_wifi.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/ganglion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/cyton.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/cyton_daisy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/board_controller.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/board_info_getter.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/brainflow_boards.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/streaming_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/synthetic_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/dyn_lib_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/bt_lib_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/playback_file_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/openbci/galea.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/file_streamer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/multicast_streamer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/gtec/unicorn_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/neuromd/neuromd_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/neuromd/brainbit.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/neuromd/callibri.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/neuromd/callibri_eeg.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/neuromd/callibri_ecg.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/neuromd/callibri_emg.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/neurosity/notion_osc.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/oymotion/gforce_pro.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/oymotion/gforce_dual.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/hackerbci/ironbci.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/hackerbci/pieeg.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/freeeeg32/freeeeg32.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/neuromd/brainbit_bled.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/muse/muse_bled.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/ant_neuro/ant_neuro.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/ant_neuro_eego24/ant_neuro_eego24.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/enophone/enophone.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/ble_lib_board.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/muse/muse.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "src/board_controller/brainalive/brainalive.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/ant_neuro/eemagine/sdk/wrapper.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/ant_neuro_eego24/eemagine/sdk/wrapper.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

@@ -15,6 +15,7 @@
 #include <utility>
 
 #include "ant_neuro.h"
+#include "ant_neuro_eego24.h"
 #include "board.h"
 #include "board_controller.h"
 #include "board_info_getter.h"
@@ -219,6 +220,10 @@ int prepare_session (int board_id, const char *json_brainflow_input_params)
         case BoardIds::ANT_NEURO_EE_225_BOARD:
             board = std::shared_ptr<Board> (
                 new AntNeuroBoard ((int)BoardIds::ANT_NEURO_EE_225_BOARD, params));
+            break;
+        case BoardIds::ANT_NEURO_EE_511_BOARD:
+            board = std::shared_ptr<Board> (
+                new AntNeuroBoard_eego24 ((int)BoardIds::ANT_NEURO_EE_511_BOARD, params));
             break;
         case BoardIds::ENOPHONE_BOARD:
             board = std::shared_ptr<Board> (new Enophone (params));

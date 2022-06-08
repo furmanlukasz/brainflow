@@ -77,6 +77,7 @@ pub enum BoardIds {
     AntNeuroEe223Board = 34,
     AntNeuroEe224Board = 35,
     AntNeuroEe225Board = 36,
+    AntNeuroEe511Board = 99,
     EnophoneBoard = 37,
     Muse2Board = 38,
     MuseSBoard = 39,
